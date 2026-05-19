@@ -44,7 +44,7 @@ REST API em **Spring Boot 3 / Java 21** + SPA em **Angular 18**. Tudo containeri
 Clone, entre na pasta e suba:
 
 ```bash
-git clone https://github.com/<sua-org>/clockin.git
+git clone https://github.com/Jhonysganzerla/clockin.git
 cd clockin
 docker compose up -d --build
 ```
