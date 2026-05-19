@@ -1,0 +1,85 @@
+{
+  "app": {
+    "title": "Clockin",
+    "language": "Language",
+    "logout": "Logout"
+  },
+  "home": {
+    "clockIn": "Clock in",
+    "clockedIn": "Clocked in at"
+  },
+  "nav": {
+    "home": "Home",
+    "users": "Users",
+    "holidays": "Holidays",
+    "timeEntries": "Time entries",
+    "report": "Report"
+  },
+  "login": {
+    "title": "Sign in",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Sign in",
+    "invalid": "Invalid credentials"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "new": "New",
+    "back": "Back",
+    "actions": "Actions",
+    "id": "ID",
+    "confirmDelete": "Are you sure?",
+    "saved": "Saved",
+    "deleted": "Deleted",
+    "error": "Error",
+    "loading": "Loading..."
+  },
+  "user": {
+    "title": "Users",
+    "login": "Username",
+    "name": "Name",
+    "password": "Password",
+    "passwordHint": "Leave blank to keep current",
+    "monthlyHours": "Monthly hours (HHMM)",
+    "dailyHours": "Daily hours (HHMM)",
+    "admin": "Administrator"
+  },
+  "holiday": {
+    "title": "Holidays",
+    "date": "Date",
+    "description": "Description"
+  },
+  "entry": {
+    "title": "Time entries",
+    "date": "Date",
+    "time": "Time",
+    "user": "User"
+  },
+  "report": {
+    "title": "Report",
+    "from": "From",
+    "to": "To",
+    "user": "User",
+    "search": "Search",
+    "print": "Download PDF",
+    "day": "Day",
+    "in": "In",
+    "out": "Out",
+    "extra": "Extra",
+    "missing": "Missing",
+    "worked": "Worked",
+    "totals": "Totals",
+    "monthBalance": "Month balance",
+    "missingLabel": "Missing",
+    "overLabel": "Over",
+    "legend": {
+      "S": "Saturday",
+      "D": "Sunday",
+      "F": "Holiday",
+      "asterisk": "Incomplete day"
+    }
+  }
+}

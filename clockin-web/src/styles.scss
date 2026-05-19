@@ -1,0 +1,13 @@
+@use '@angular/material' as mat;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.full-width { width: 100%; }
+.spacer { flex: 1 1 auto; }
+.row { display: flex; gap: 16px; align-items: center; }
+.col { display: flex; flex-direction: column; gap: 16px; }
+.page { padding: 24px; max-width: 1200px; margin: 0 auto; }
+
+table.full-width { width: 100%; }
+.actions-cell { width: 120px; text-align: right; }

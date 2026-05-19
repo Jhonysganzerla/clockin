@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: clockin-db
+    environment:
+      POSTGRES_DB: clockin
+      POSTGRES_USER: clockin
+      POSTGRES_PASSWORD: clockin
+    ports:
+      - "5432:5432"
+    volumes:
+      - clockin-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clockin -d clockin"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: ./clockin-api
+    container_name: clockin-api
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/clockin
+      DB_USER: clockin
+      DB_PASSWORD: clockin
+      JWT_SECRET: ${JWT_SECRET:-Y2hhdmUtZGV2LXRyb2Nhci1lbS1wcm9kdWNhby1jaGF2ZS1kZXYtdHJvY2FyLWVtLXByb2R1Y2Fv}
+      CORS_ORIGINS: http://localhost:4200
+    ports:
+      - "8080:8080"
+
+  web:
+    build: ./clockin-web
+    container_name: clockin-web
+    depends_on:
+      - api
+    ports:
+      - "4200:80"
+
+volumes:
+  clockin-db-data:

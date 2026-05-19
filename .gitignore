@@ -1,0 +1,29 @@
+# IDEs
+.idea/
+.vscode/
+.claude/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Node
+node_modules/
+
+# Angular
+clockin-web/dist/
+clockin-web/.angular/
+
+# Maven / Java
+clockin-api/target/
+*.class
+

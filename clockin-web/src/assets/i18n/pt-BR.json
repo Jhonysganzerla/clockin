@@ -1,0 +1,85 @@
+{
+  "app": {
+    "title": "Clockin",
+    "language": "Idioma",
+    "logout": "Sair"
+  },
+  "home": {
+    "clockIn": "Bater ponto",
+    "clockedIn": "Ponto registrado às"
+  },
+  "nav": {
+    "home": "Início",
+    "users": "Usuários",
+    "holidays": "Feriados",
+    "timeEntries": "Pontos",
+    "report": "Relatório"
+  },
+  "login": {
+    "title": "Entrar",
+    "username": "Usuário",
+    "password": "Senha",
+    "submit": "Entrar",
+    "invalid": "Credenciais inválidas"
+  },
+  "common": {
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "new": "Novo",
+    "back": "Voltar",
+    "actions": "Ações",
+    "id": "ID",
+    "confirmDelete": "Tem certeza?",
+    "saved": "Salvo",
+    "deleted": "Excluído",
+    "error": "Erro",
+    "loading": "Carregando..."
+  },
+  "user": {
+    "title": "Usuários",
+    "login": "Usuário",
+    "name": "Nome",
+    "password": "Senha",
+    "passwordHint": "Deixe em branco para manter",
+    "monthlyHours": "Horas mensais (HHMM)",
+    "dailyHours": "Horas diárias (HHMM)",
+    "admin": "Administrador"
+  },
+  "holiday": {
+    "title": "Feriados",
+    "date": "Data",
+    "description": "Descrição"
+  },
+  "entry": {
+    "title": "Pontos",
+    "date": "Data",
+    "time": "Hora",
+    "user": "Usuário"
+  },
+  "report": {
+    "title": "Relatório",
+    "from": "De",
+    "to": "Até",
+    "user": "Usuário",
+    "search": "Buscar",
+    "print": "Baixar PDF",
+    "day": "Dia",
+    "in": "Entrada",
+    "out": "Saída",
+    "extra": "Extra",
+    "missing": "Falta",
+    "worked": "Trabalhado",
+    "totals": "Totais",
+    "monthBalance": "Saldo do mês",
+    "missingLabel": "Faltam",
+    "overLabel": "Sobram",
+    "legend": {
+      "S": "Sábado",
+      "D": "Domingo",
+      "F": "Feriado",
+      "asterisk": "Dia incompleto"
+    }
+  }
+}
