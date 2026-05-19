@@ -5,7 +5,12 @@
     "logout": "Sair"
   },
   "home": {
+    "heroTitle": "Pronto para registrar seu ponto?",
+    "morning": "Bom dia",
+    "afternoon": "Boa tarde",
+    "evening": "Boa noite",
     "clockIn": "Bater ponto",
+    "clockInHint": "A batida usa a data e hora do servidor.",
     "clockedIn": "Ponto registrado às"
   },
   "nav": {
@@ -13,14 +18,17 @@
     "users": "Usuários",
     "holidays": "Feriados",
     "timeEntries": "Pontos",
-    "report": "Relatório"
+    "report": "Relatório",
+    "admin": "Administração"
   },
   "login": {
-    "title": "Entrar",
+    "title": "Bem-vindo de volta",
+    "subtitle": "Entre para registrar seus pontos",
     "username": "Usuário",
     "password": "Senha",
     "submit": "Entrar",
-    "invalid": "Credenciais inválidas"
+    "invalid": "Credenciais inválidas",
+    "foot": "Clockin · Sistema de ponto self-hosted"
   },
   "common": {
     "save": "Salvar",
@@ -45,7 +53,8 @@
     "passwordHint": "Deixe em branco para manter",
     "monthlyHours": "Horas mensais (HHMM)",
     "dailyHours": "Horas diárias (HHMM)",
-    "admin": "Administrador"
+    "admin": "Administrador",
+    "member": "Colaborador"
   },
   "holiday": {
     "title": "Feriados",

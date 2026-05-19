@@ -5,7 +5,12 @@
     "logout": "Logout"
   },
   "home": {
+    "heroTitle": "Ready to clock in?",
+    "morning": "Good morning",
+    "afternoon": "Good afternoon",
+    "evening": "Good evening",
     "clockIn": "Clock in",
+    "clockInHint": "Uses server date and time.",
     "clockedIn": "Clocked in at"
   },
   "nav": {
@@ -13,14 +18,17 @@
     "users": "Users",
     "holidays": "Holidays",
     "timeEntries": "Time entries",
-    "report": "Report"
+    "report": "Report",
+    "admin": "Admin"
   },
   "login": {
-    "title": "Sign in",
+    "title": "Welcome back",
+    "subtitle": "Sign in to track your time",
     "username": "Username",
     "password": "Password",
     "submit": "Sign in",
-    "invalid": "Invalid credentials"
+    "invalid": "Invalid credentials",
+    "foot": "Clockin · Self-hosted time tracking"
   },
   "common": {
     "save": "Save",
@@ -45,7 +53,8 @@
     "passwordHint": "Leave blank to keep current",
     "monthlyHours": "Monthly hours (HHMM)",
     "dailyHours": "Daily hours (HHMM)",
-    "admin": "Administrator"
+    "admin": "Administrator",
+    "member": "Member"
   },
   "holiday": {
     "title": "Holidays",

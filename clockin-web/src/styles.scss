@@ -1,13 +1,151 @@
 @use '@angular/material' as mat;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* ============================================================
+   Design tokens
+   ============================================================ */
+:root {
+  /* Brand */
+  --c-primary:        #4f46e5;  /* indigo-600 */
+  --c-primary-hover:  #4338ca;  /* indigo-700 */
+  --c-primary-soft:   #eef2ff;  /* indigo-50  */
+  --c-accent:         #f59e0b;  /* amber-500  */
+  --c-accent-hover:   #d97706;  /* amber-600  */
 
+  /* Neutrals */
+  --c-bg:             #f8fafc;  /* slate-50  - app bg            */
+  --c-surface:        #ffffff;  /* cards / sidebar               */
+  --c-surface-2:      #f1f5f9;  /* slate-100 - subtle alt        */
+  --c-border:         #e2e8f0;  /* slate-200                     */
+  --c-text:           #0f172a;  /* slate-900 - headings          */
+  --c-text-muted:     #475569;  /* slate-600 - body              */
+  --c-text-soft:      #94a3b8;  /* slate-400 - hints / icons     */
+
+  /* Semantic */
+  --c-success:        #10b981;  /* emerald-500 */
+  --c-danger:         #ef4444;  /* red-500     */
+  --c-warning:        #f59e0b;  /* amber-500   */
+
+  /* Radii */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 24px;
+  --r-full: 999px;
+
+  /* Shadows */
+  --sh-sm: 0 1px 2px 0 rgb(15 23 42 / 0.05);
+  --sh-md: 0 4px 12px -2px rgb(15 23 42 / 0.08), 0 2px 4px -2px rgb(15 23 42 / 0.05);
+  --sh-lg: 0 12px 32px -8px rgb(15 23 42 / 0.18), 0 4px 8px -4px rgb(15 23 42 / 0.08);
+
+  /* Brand gradient */
+  --g-brand: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
+  --g-hero:  linear-gradient(135deg, #eef2ff 0%, #fef3c7 100%);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+  background: var(--c-bg);
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  color: var(--c-text);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5rem;
+}
+h1 { font-size: 1.75rem; line-height: 1.2; }
+h2 { font-size: 1.375rem; }
+h3 { font-size: 1.125rem; }
+
+p { color: var(--c-text-muted); margin: 0 0 1rem; }
+
+/* ============================================================
+   Layout helpers
+   ============================================================ */
 .full-width { width: 100%; }
-.spacer { flex: 1 1 auto; }
-.row { display: flex; gap: 16px; align-items: center; }
-.col { display: flex; flex-direction: column; gap: 16px; }
-.page { padding: 24px; max-width: 1200px; margin: 0 auto; }
+.spacer     { flex: 1 1 auto; }
+.row        { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.col        { display: flex; flex-direction: column; gap: 16px; }
+
+.page {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 table.full-width { width: 100%; }
 .actions-cell { width: 120px; text-align: right; }
+
+/* ============================================================
+   Material overrides — softer cards, better focus
+   ============================================================ */
+.mat-mdc-card {
+  border-radius: var(--r-lg) !important;
+  box-shadow: var(--sh-md) !important;
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+}
+
+.mat-mdc-raised-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-outlined-button,
+.mat-mdc-button {
+  border-radius: var(--r-full) !important;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+}
+
+.mat-mdc-table {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--c-border);
+}
+
+.mat-mdc-header-row {
+  background: var(--c-surface-2);
+}
+
+.mat-mdc-header-cell {
+  color: var(--c-text-muted) !important;
+  font-weight: 600 !important;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   Utility: brand chip
+   ============================================================ */
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--c-text);
+  letter-spacing: -0.01em;
+}
+.brand-mark__logo {
+  width: 36px; height: 36px;
+  border-radius: var(--r-md);
+  background: var(--g-brand);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: #fff;
+  box-shadow: var(--sh-md);
+}
+.brand-mark__logo mat-icon {
+  width: 22px; height: 22px; font-size: 22px;
+}
