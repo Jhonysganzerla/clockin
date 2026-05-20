@@ -8,8 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AuthService } from '@app/core/auth/auth.service';
+import { SupportDialogComponent } from '@app/features/support/support-dialog.component';
 
 @Component({
   selector: 'app-shell',
@@ -18,7 +20,7 @@ import { AuthService } from '@app/core/auth/auth.service';
   imports: [
     CommonModule, RouterOutlet, RouterLink, RouterLinkActive,
     MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule,
-    MatButtonModule, MatMenuModule, MatDividerModule, TranslateModule
+    MatButtonModule, MatMenuModule, MatDividerModule, MatDialogModule, TranslateModule
   ],
   template: `
     <mat-sidenav-container class="shell">
@@ -72,6 +74,10 @@ import { AuthService } from '@app/core/auth/auth.service';
             <button mat-menu-item [matMenuTriggerFor]="langMenu">
               <mat-icon>language</mat-icon>
               <span>{{ 'app.language' | translate }}</span>
+            </button>
+            <button mat-menu-item (click)="openSupport()">
+              <mat-icon style="color:#e91e63">favorite</mat-icon>
+              <span>{{ 'support.menu' | translate }}</span>
             </button>
             <mat-divider></mat-divider>
             <button mat-menu-item (click)="logout()">
@@ -217,6 +223,11 @@ export class ShellComponent {
   protected auth = inject(AuthService);
   private router = inject(Router);
   private translate = inject(TranslateService);
+  private dialog = inject(MatDialog);
+
+  openSupport(): void {
+    this.dialog.open(SupportDialogComponent, { panelClass: 'support-dialog' });
+  }
 
   protected initials = computed(() => {
     const name = this.auth.session()?.nome ?? '';

@@ -24,6 +24,7 @@ REST API em **Spring Boot 3 / Java 21** + SPA em **Angular 18**. Tudo containeri
 - [Funcionalidades](#funcionalidades)
 - [Arquitetura](#arquitetura)
 - [Troubleshooting](#troubleshooting)
+- [Apoie o projeto](#-apoie-o-projeto)
 - [Licença](#licença)
 
 ---
@@ -270,6 +271,34 @@ Detalhes em [`clockin-api/README.md`](clockin-api/README.md).
 docker compose down -v
 docker compose up -d
 ```
+
+---
+
+## ☕ Apoie o projeto
+
+O Clockin é **gratuito, open source e self-hosted** — sem mensalidade, sem SaaS, sem rastreamento. Se ele te economiza tempo ou dinheiro, considera me pagar um café. Ajuda demais a manter o projeto vivo.
+
+### PIX (Brasil)
+
+<img src="docs/pix-qr.png" alt="QR Code PIX" width="200" align="right" />
+
+**Chave PIX (aleatória):**
+
+```
+ac344236-c335-4f89-aee2-e671101d4619
+```
+
+**Ou use o copia-e-cola:**
+
+```
+00020101021126580014br.gov.bcb.pix0136ac344236-c335-4f89-aee2-e671101d46195204000053039865802BR5915Jhony Sganzerla6008BRASILIA62070503***6304EEE4
+```
+
+Beneficiário: **Jhony Sganzerla** · Valor: você escolhe 💛
+
+### GitHub Sponsors
+
+Prefere apoiar de forma recorrente? Use o botão **Sponsor** no topo do repositório ou acesse [github.com/sponsors/Jhonysganzerla](https://github.com/sponsors/Jhonysganzerla).
 
 ---
 

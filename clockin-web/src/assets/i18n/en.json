@@ -43,7 +43,21 @@
     "saved": "Saved",
     "deleted": "Deleted",
     "error": "Error",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "close": "Close"
+  },
+  "support": {
+    "menu": "Support the project",
+    "title": "Buy me a coffee",
+    "lead": "Clockin is free and open source. If it helps you, consider supporting — any amount makes a difference.",
+    "pixKey": "PIX key (random) — Brazil only",
+    "copyKey": "Copy key",
+    "copyPaste": "PIX copy-and-paste",
+    "copyPayload": "Copy PIX code",
+    "copied": "Copied!",
+    "copyFailed": "Could not copy",
+    "freeAmount": "any amount",
+    "sponsor": "Support via GitHub Sponsors"
   },
   "user": {
     "title": "Users",
