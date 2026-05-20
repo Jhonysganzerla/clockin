@@ -8,8 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AuthService } from '@app/core/auth/auth.service';
+import { SupportDialogComponent } from '@app/features/support/support-dialog.component';
 
 @Component({
   selector: 'app-shell',
@@ -18,7 +20,7 @@ import { AuthService } from '@app/core/auth/auth.service';
   imports: [
     CommonModule, RouterOutlet, RouterLink, RouterLinkActive,
     MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule,
-    MatButtonModule, MatMenuModule, MatDividerModule, TranslateModule
+    MatButtonModule, MatMenuModule, MatDividerModule, MatDialogModule, TranslateModule
   ],
   template: `
     <mat-sidenav-container class="shell">
@@ -73,6 +75,10 @@ import { AuthService } from '@app/core/auth/auth.service';
               <mat-icon>language</mat-icon>
               <span>{{ 'app.language' | translate }}</span>
             </button>
+            <button mat-menu-item (click)="openSupport()">
+              <mat-icon style="color:#e91e63">favorite</mat-icon>
+              <span>{{ 'support.menu' | translate }}</span>
+            </button>
             <mat-divider></mat-divider>
             <button mat-menu-item (click)="logout()">
               <mat-icon>logout</mat-icon>
@@ -88,6 +94,15 @@ import { AuthService } from '@app/core/auth/auth.service';
 
       <mat-sidenav-content class="content">
         <router-outlet />
+        <button
+          type="button"
+          class="coffee-fab"
+          (click)="openSupport()"
+          [attr.aria-label]="'support.menu' | translate"
+          [title]="'support.menu' | translate">
+          <span class="coffee-fab__icon">☕</span>
+          <span class="coffee-fab__label">{{ 'support.fab' | translate }}</span>
+        </button>
       </mat-sidenav-content>
     </mat-sidenav-container>
   `,
@@ -210,6 +225,46 @@ import { AuthService } from '@app/core/auth/auth.service';
     .content {
       background: var(--c-bg);
       overflow-y: auto;
+      position: relative;
+    }
+
+    .coffee-fab {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px 8px 10px;
+      border: 1px solid var(--c-border);
+      background: var(--c-surface);
+      color: var(--c-text-muted);
+      border-radius: var(--r-full, 999px);
+      font: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      opacity: 0.7;
+      transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+    }
+    .coffee-fab:hover {
+      opacity: 1;
+      color: var(--c-text);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+    .coffee-fab:focus-visible {
+      outline: 2px solid var(--c-primary);
+      outline-offset: 2px;
+      opacity: 1;
+    }
+    .coffee-fab__icon { font-size: 1rem; line-height: 1; }
+    .coffee-fab__label { white-space: nowrap; }
+
+    @media (max-width: 600px) {
+      .coffee-fab__label { display: none; }
+      .coffee-fab { padding: 10px; }
     }
   `]
 })
@@ -217,6 +272,11 @@ export class ShellComponent {
   protected auth = inject(AuthService);
   private router = inject(Router);
   private translate = inject(TranslateService);
+  private dialog = inject(MatDialog);
+
+  openSupport(): void {
+    this.dialog.open(SupportDialogComponent, { panelClass: 'support-dialog' });
+  }
 
   protected initials = computed(() => {
     const name = this.auth.session()?.nome ?? '';
