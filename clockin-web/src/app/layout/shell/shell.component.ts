@@ -94,6 +94,15 @@ import { SupportDialogComponent } from '@app/features/support/support-dialog.com
 
       <mat-sidenav-content class="content">
         <router-outlet />
+        <button
+          type="button"
+          class="coffee-fab"
+          (click)="openSupport()"
+          [attr.aria-label]="'support.menu' | translate"
+          [title]="'support.menu' | translate">
+          <span class="coffee-fab__icon">☕</span>
+          <span class="coffee-fab__label">{{ 'support.fab' | translate }}</span>
+        </button>
       </mat-sidenav-content>
     </mat-sidenav-container>
   `,
@@ -216,6 +225,46 @@ import { SupportDialogComponent } from '@app/features/support/support-dialog.com
     .content {
       background: var(--c-bg);
       overflow-y: auto;
+      position: relative;
+    }
+
+    .coffee-fab {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px 8px 10px;
+      border: 1px solid var(--c-border);
+      background: var(--c-surface);
+      color: var(--c-text-muted);
+      border-radius: var(--r-full, 999px);
+      font: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      opacity: 0.7;
+      transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+    }
+    .coffee-fab:hover {
+      opacity: 1;
+      color: var(--c-text);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    }
+    .coffee-fab:focus-visible {
+      outline: 2px solid var(--c-primary);
+      outline-offset: 2px;
+      opacity: 1;
+    }
+    .coffee-fab__icon { font-size: 1rem; line-height: 1; }
+    .coffee-fab__label { white-space: nowrap; }
+
+    @media (max-width: 600px) {
+      .coffee-fab__label { display: none; }
+      .coffee-fab { padding: 10px; }
     }
   `]
 })
